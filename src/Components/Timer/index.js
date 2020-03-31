@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import useInterval from '../../CustomsHooks/useInterval';
 
 
@@ -37,7 +37,7 @@ const Timer = () => {
         <div>
             <h1>Time Remaining : {minutes}:{seconds >= 10 ? seconds : "0" + seconds}</h1>
             <div>
-
+                
             </div>
         </div>
     );
