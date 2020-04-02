@@ -43,8 +43,7 @@ const Timer = () => {
 
     return (
         <div>
-            <h1>Time Remaining : {minutes}:{seconds >= 10 ? seconds : "0" + seconds}</h1>
-            
+            <h2>Time Remaining : {minutes}:{seconds >= 10 ? seconds : "0" + seconds} s</h2>
             <form onSubmit={handleSubmitTimer}>
                 <input placeholder="minutes"  value={inputMinutes} onChange={(e) => setInputMinutes(e.target.value)}/>
                 <input placeholder="seconds" value={inputSeconds} onChange={(e) => setInputSeconds(e.target.value)}/>
