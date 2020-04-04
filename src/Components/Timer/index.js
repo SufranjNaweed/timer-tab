@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
 import useInterval from '../../CustomsHooks/useInterval';
 
+import play from '../../Assets/Images/play.svg';
+import pause from '../../Assets/Images/pause.svg';
+
 const Timer = () => {
 
     const [delay, setDelay] = useState(1000);
-    const [minutes, setMinutes] = useState(0);
-    const [seconds, setSeconds] = useState(25);
+    const [minutes, setMinutes] = useState(25);
+    const [seconds, setSeconds] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
 
     const [inputMinutes, setInputMinutes] = useState('');
@@ -36,19 +39,46 @@ const Timer = () => {
 
     const handleSubmitTimer = (e) => {
         e.preventDefault();
-        setMinutes(inputMinutes);
-        setSeconds(inputSeconds);
-        setIsRunning(true);
+        if(inputMinutes && inputSeconds){
+            setMinutes(inputMinutes);
+            setSeconds(inputSeconds);
+            setIsRunning(true);
+        }
+        else{
+            setIsRunning(true);
+        }
+
+    }
+
+    const toggleRunning = () => {
+        setIsRunning(!isRunning);
     }
 
     return (
-        <div>
-            <h2>Time Remaining : {minutes}:{seconds >= 10 ? seconds : "0" + seconds} s</h2>
+        <div id="timer">
+            <h2 className="title-part">Timer</h2>
             <form onSubmit={handleSubmitTimer}>
-                <input placeholder="minutes"  value={inputMinutes} onChange={(e) => setInputMinutes(e.target.value)}/>
-                <input placeholder="seconds" value={inputSeconds} onChange={(e) => setInputSeconds(e.target.value)}/>
-                <input type="submit" value="START" />
+                <input placeholder="25" type="number" min="0" max="59" maxLength="2" value={inputMinutes} onChange={(e) => setInputMinutes(e.target.value)}/>
+                <label>m</label>
+                <input placeholder="00" type="number" min="0" max="59" maxLength="2" value={inputSeconds} onChange={(e) => setInputSeconds(e.target.value)}/>
+                <label>s</label>
+                <input className="start" type="submit" value="START" />
             </form>
+            <div className="control-area">
+                <h2 className="timer-print">{minutes} : {seconds >= 10 ? seconds : "0" + seconds}</h2>
+                {
+                    isRunning ? 
+                    <div className="control-button play" onClick={() => { toggleRunning() }}>
+                        <img src={pause} alt="pause" />
+                    </div>
+                    :
+                    <div className="control-button pause" onClick={() => { toggleRunning() }}>
+                        <img src={play} alt="play"/>
+                    </div>
+
+                }
+            </div>
+
         </div>
     );
 }
