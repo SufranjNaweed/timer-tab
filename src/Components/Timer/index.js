@@ -11,8 +11,8 @@ const Timer = () => {
     const [seconds, setSeconds] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
 
-    const [inputMinutes, setInputMinutes] = useState('');
-    const [inputSeconds, setInputSeconds] = useState('');
+    const [inputMinutes, setInputMinutes] = useState(25);
+    const [inputSeconds, setInputSeconds] = useState(0);
 
     useInterval(() => {
         // Format timer title
@@ -41,7 +41,10 @@ const Timer = () => {
         e.preventDefault();
         if(inputMinutes && inputSeconds){
             setMinutes(inputMinutes);
-            setSeconds(inputSeconds);
+            if(inputSeconds === "00" || inputSeconds === "0")
+                setSeconds(0);
+            else
+                setSeconds(inputSeconds);
             setIsRunning(true);
         }
         else{
@@ -58,9 +61,9 @@ const Timer = () => {
         <div id="timer">
             <h2 className="title-part">Timer</h2>
             <form onSubmit={handleSubmitTimer}>
-                <input placeholder="25" type="number" min="0" max="59" maxLength="2" value={inputMinutes} onChange={(e) => setInputMinutes(e.target.value)}/>
+                <input placeholder="minutes" type="number" min="0" max="59" maxLength="2"  onChange={(e) => setInputMinutes(e.target.value)}/>
                 <label>m</label>
-                <input placeholder="00" type="number" min="0" max="59" maxLength="2" value={inputSeconds} onChange={(e) => setInputSeconds(e.target.value)}/>
+                <input placeholder="seconds" type="number" min="0" max="59" maxLength="2"   onChange={(e) => setInputSeconds(e.target.value)}/>
                 <label>s</label>
                 <input className="start" type="submit" value="START" />
             </form>
@@ -75,7 +78,6 @@ const Timer = () => {
                     <div className="control-button pause" onClick={() => { toggleRunning() }}>
                         <img src={play} alt="play"/>
                     </div>
-
                 }
             </div>
 
