@@ -5,10 +5,10 @@ import TaskContextProvider from '../../Contexts/TaskContext';
 
 const TaskContainer = () => {
     return ( 
-        <section id="taskContainer">
+        <section id="task-container">
             <TaskContextProvider>
-                <TaskForm></TaskForm>
                 <TaskList></TaskList>
+                <TaskForm></TaskForm>
             </TaskContextProvider>
         </section>
     );
