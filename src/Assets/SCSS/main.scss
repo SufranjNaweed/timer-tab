@@ -1,7 +1,13 @@
 // Configs
-@import './Config/colors.scss';
+@import './Configs/colors.scss';
+@import './Configs/fonts.scss';
+@import './Configs/general.scss';
 
 // Components
 @import './Components/navbar.scss';
-@import './Components/navbar.scss';
 @import './Components/footer.scss';
+
+@import './Components/buttons.scss';
+
+@import './Components/task-container.scss';
+@import './Components/timer.scss';
