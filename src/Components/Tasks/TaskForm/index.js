@@ -72,8 +72,8 @@ const TaskForm = () => {
                     </div>
 
                     <div className="input-text-container">
-                    <input placeholder="Minutes" onChange={(e) => setMinutes(e.target.value)} /> 
-                    <input placeholder="Seconds" onChange={(e) => setSeconds(e.target.value)} /> 
+                    <input placeholder="Minutes" type="number" onChange={(e) => setMinutes(e.target.value)} /> 
+                    <input placeholder="Seconds" type="number" onChange={(e) => setSeconds(e.target.value)} /> 
                     </div>
 
                     <div className="input-action-container">

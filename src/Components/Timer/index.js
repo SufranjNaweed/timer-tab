@@ -16,15 +16,14 @@ const Timer = () => {
     useInterval(() => {
         // Format timer title
         const secondsTimer = seconds >= 10 ? seconds : "0" + seconds;
-        document.title = JSON.stringify(`Time left -> ${minutes} : ${secondsTimer}`);
-
+        document.title = JSON.stringify(`⏳ Time left -> ${minutes} : ${secondsTimer} ☑️`);
         if(seconds > 0){
             setSeconds(seconds - 1);
         }
         if(seconds === 0){
-            if(minutes === 0){
+            if(minutes <= 0){
                 setIsRunning(false)
-                document.title =  "Time out !!!";
+                document.title =  "⏰ Time out !!! ⏰";
             }
             else{
                 setMinutes(minutes - 1);
