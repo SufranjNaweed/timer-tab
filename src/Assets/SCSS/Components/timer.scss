@@ -23,8 +23,8 @@
         box-shadow:  45px 45px 230px #d9d9d9, 
                     -45px -45px 230px #ffffff;
         input{
-            width: 60px;
-            height: 60px;
+            width: 75px;
+            height: 75px;
             @media screen and (min-width : $mdScreen){
                 width: 90px;
                 height: 90px;
@@ -40,9 +40,12 @@
 
             &::placeholder {
                 color: $blue;
-                font-size: 20px;
-                opacity: 0.3;
+                font-size: 16px;
+                opacity: 0.6;
                 text-align: center;
+                @media screen and (min-width : $mdScreen){
+                    font-size: 20px;
+                }
               }
         }
 

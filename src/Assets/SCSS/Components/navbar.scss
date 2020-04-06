@@ -1,8 +1,12 @@
 header{
     margin: 0;
-    padding: 40px 20px;
+    padding: 20px;
     letter-spacing: 4px;
-    box-shadow: 0 2px 4px 0px rgba(0,0,0,0.25);
+
+    box-shadow: 5px 5px 60px #d9d9d9, -5px -5px 60px #ffffff;
+    @media screen and (min-width : $mdScreen){
+        padding: 40px 20px;
+    }
     h1{
         text-align: center;
         font-size: 40px;
