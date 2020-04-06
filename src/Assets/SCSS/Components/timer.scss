@@ -7,7 +7,6 @@
         &.title-part{
             font-size: 40px;
         }
-
     }
 
     form{
@@ -93,7 +92,8 @@
             align-items: center;
             justify-content: center;
             margin: auto;
-
+            cursor: pointer;
+            
             width: 96px;
             height: 96px;
 
@@ -101,16 +101,13 @@
             border: 1px solid transparent;
             box-shadow: 20px 20px 100px #d9d9d9, 
                         20px 20px 100px #ffffff;
-            
             &.play{
                 
-                &hover{
-                    background-color: $red;
+                &:hover{
                 }
             }
             &.pause{
-                &hover{
-                    background-color: $green;
+                &:hover{
                 }
             }
             
