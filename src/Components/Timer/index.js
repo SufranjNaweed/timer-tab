@@ -5,8 +5,7 @@ import play from '../../Assets/Images/play.svg';
 import pause from '../../Assets/Images/pause.svg';
 
 const Timer = () => {
-
-    const [delay, setDelay] = useState(1000);
+    const delay = 1000;
     const [minutes, setMinutes] = useState(25);
     const [seconds, setSeconds] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
@@ -80,7 +79,6 @@ const Timer = () => {
                     </div>
                 }
             </div>
-
         </div>
     );
 }
