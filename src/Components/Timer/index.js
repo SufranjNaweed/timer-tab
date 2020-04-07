@@ -3,9 +3,12 @@ import useInterval from '../../CustomsHooks/useInterval';
 
 import play from '../../Assets/Images/play.svg';
 import pause from '../../Assets/Images/pause.svg';
+import soundTimeOut from '../../Assets/Sounds/ding-sound.mp3';
 
 const Timer = () => {
     const delay = 1000;
+    const audio = new Audio(soundTimeOut);
+
     const [minutes, setMinutes] = useState(25);
     const [seconds, setSeconds] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
@@ -24,6 +27,7 @@ const Timer = () => {
             if(minutes <= 0){
                 setIsRunning(false)
                 document.title =  "⏰ Time out !!! ⏰";
+                audio.play();
             }
             else{
                 setMinutes(minutes - 1);
