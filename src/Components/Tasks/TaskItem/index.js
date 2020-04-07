@@ -5,11 +5,12 @@ import doneSVG from '../../../Assets/Images/done.svg';
 import deletSVG from '../../../Assets/Images/delete.svg'
 
 const TaskItem = ({task}) => {
-    const {id, title, priority, minutes, seconds} = task;
+    const {id, title, priority, minutes, seconds, complete} = task;
     const { removeTask, setComplete } = useContext(TaskContext);
-    
+    const isComplete = complete ? "task-complete"  : "";
+
     return (
-        <li className={"task-item " + priority} key={id}>
+        <li className={"task-item " + priority + " " + isComplete} key={id}>
             <div className="content">
                 <p>{title}</p>
                 {

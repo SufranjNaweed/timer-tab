@@ -11,7 +11,6 @@ const TaskContextProvider = (props) => {
         { id : 2, complete: false, title : 'Do some push-up 💪', priority: 'medium', minutes: '15', seconds : '00' },
         { id : 3, complete: false, title : 'Watch La casa de Papel season 4 episode 6 💔', priority: 'high', minutes: '50', seconds : '00' },
     ];
-
     const [tasks, setTask] = useState([]);
     const [isOpenModal, setIsOpenModal] = useState(false);
     
@@ -57,15 +56,17 @@ const TaskContextProvider = (props) => {
         TaskToUpdate.complete = !TaskToUpdate.complete;
         // get other task
         const filteredTask = tasks.filter(task => task.id !== id);
-        // put the updated task
-        setTask([...filteredTask, TaskToUpdate]);
-
+        const newTasks = [...filteredTask, TaskToUpdate];
+        // put the updated new task
+        setTask(newTasks);
+        localStorage.setItem('Timer_Task', JSON.stringify(newTasks));
         toast.info("✔️ Nice work ! Keep up ! 😊", {autoClose : 3000, position: toast.POSITION.BOTTOM_CENTER});
     }
 
     const  toggleVisibilityModal = () => {
         setIsOpenModal(!isOpenModal);
     }
+
     return (
         <TaskContext.Provider value={{tasks, addTask, removeTask, setComplete, isOpenModal, toggleVisibilityModal}} >
             <ToastContainer />

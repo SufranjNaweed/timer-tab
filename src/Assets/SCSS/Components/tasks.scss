@@ -34,6 +34,11 @@
                     border-left: solid 14px $light_red;
                 }
             }
+            &.task-complete{
+                p{
+                    text-decoration : line-through;
+                }
+            }
             .content{
                 p{
                     margin-bottom: 10px;
