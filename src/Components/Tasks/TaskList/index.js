@@ -6,7 +6,7 @@ const TaskList = () => {
     const { tasks } = useContext(TaskContext);
 
     return ( 
-        tasks ? (
+        tasks.length > 0 ? (
             <ul>
                 {
                     tasks.map(task => {
@@ -15,7 +15,10 @@ const TaskList = () => {
                 }
             </ul>
         ) : (
-            <div> No Todo Left,  yheaaah free time '\o/'</div>
+            <div className="empty-tasks"> 
+                No Tasks Left,  yheaaah free time 🐬 <br />
+                Clic down ⬇️ bellow to add new Task ✅
+            </div>
         )
     );
 }
