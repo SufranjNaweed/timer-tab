@@ -26,7 +26,8 @@ const TaskContextProvider = (props) => {
         }
     }, []);
 
-    const addTask = (title, description, priority, minutes, seconds) => {  
+    const addTask = (title, priority, minutes, seconds) => { 
+        console.log(priority)
         const newTasks = [...tasks, {
             id: uuidv4(),
             complete: false,
