@@ -5,7 +5,7 @@ import doneSVG from '../../../Assets/Images/done.svg';
 import deletSVG from '../../../Assets/Images/delete.svg'
 
 const TaskItem = ({task}) => {
-    const {id, title, description, priority, minutes, seconds} = task;
+    const {id, title, priority, minutes, seconds} = task;
     const { removeTask, setComplete } = useContext(TaskContext);
     
     return (
