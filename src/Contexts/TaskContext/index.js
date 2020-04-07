@@ -7,9 +7,9 @@ export const TaskContext = createContext();
 
 const TaskContextProvider = (props) => {
     const defaultTask =  [
-        { id : 1, complete: false, title : 'Save the world again 🌎', description : '', priority: 'low', minutes: 2, seconds : 30 },
-        { id : 2, complete: false, title : 'Do some push-up 💪', description : '', priority: 'medium', minutes: '15', seconds : '00' },
-        { id : 3, complete: false, title : 'Watch La casa de Papel season 4 episode 6 💔', description : '', priority: 'high', minutes: '50', seconds : '00' },
+        { id : 1, complete: false, title : 'Save the world again 🌎', priority: 'low', minutes: 2, seconds : 30 },
+        { id : 2, complete: false, title : 'Do some push-up 💪', priority: 'medium', minutes: '15', seconds : '00' },
+        { id : 3, complete: false, title : 'Watch La casa de Papel season 4 episode 6 💔', priority: 'high', minutes: '50', seconds : '00' },
     ];
 
     const [tasks, setTask] = useState([]);
@@ -31,7 +31,6 @@ const TaskContextProvider = (props) => {
             id: uuidv4(),
             complete: false,
             title,
-            description, 
             priority,
             minutes,
             seconds  

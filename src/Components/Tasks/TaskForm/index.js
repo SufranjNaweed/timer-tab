@@ -5,14 +5,13 @@ const TaskForm = () => {
     const { addTask, isOpenModal, toggleVisibilityModal } = useContext(TaskContext);
 
     const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
     const [priority, setPriority] = useState('high');
     const [minutes, setMinutes] = useState();
     const [seconds, setSeconds] = useState();
     
     const submitTask = (event) => {
         event.preventDefault();
-        addTask(title, description, priority, minutes, seconds);
+        addTask(title, priority, minutes, seconds);
         toggleVisibilityModal(isOpenModal)
     }
     
@@ -27,7 +26,6 @@ const TaskForm = () => {
                     <h3>Create Task</h3>
                     <div className="input-text-container">
                         <input placeholder="Title" onChange={(e) => setTitle(e.target.value)} required/>
-                        <input placeholder="Short description" onChange={(e) => setDescription(e.target.value)} />
                     </div>
                     <div className="checkbox-container">
                         <div className="priority-check">
