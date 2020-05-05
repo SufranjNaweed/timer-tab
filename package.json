@@ -10,7 +10,7 @@
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0",
+    "react-scripts": "3.4.1",
     "react-toastify": "^5.5.0",
     "uuid": "^7.0.2"
   },
