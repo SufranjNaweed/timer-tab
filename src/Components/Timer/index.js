@@ -13,7 +13,7 @@ const Timer = () => {
     const [seconds, setSeconds] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
 
-    const [inputMinutes, setInputMinutes] = useState(25);
+    const [inputMinutes, setInputMinutes] = useState(0);
     const [inputSeconds, setInputSeconds] = useState(0);
 
     useInterval(() => {
@@ -41,7 +41,7 @@ const Timer = () => {
 
     const handleSubmitTimer = (e) => {
         e.preventDefault();
-        if(inputMinutes && inputSeconds){
+        if(inputSeconds){
             setMinutes(inputMinutes);
             if(inputSeconds === "00" || inputSeconds === "0")
                 setSeconds(0);
@@ -52,7 +52,6 @@ const Timer = () => {
         else{
             setIsRunning(true);
         }
-
     }
 
     const toggleRunning = () => {
