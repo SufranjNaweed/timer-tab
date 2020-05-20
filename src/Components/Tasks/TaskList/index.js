@@ -16,8 +16,8 @@ const TaskList = () => {
             </ul>
         ) : (
             <div className="empty-tasks"> 
-                No Tasks Left,  yheaaah free time 🐬 <br />
-                Clic down ⬇️ bellow to add new Task ✅
+                No Tasks Left,  yheaaah free time <span role="img" aria-label="dolphin">🐬</span><br />
+                Clic down <span role="img" aria-label="arrow-down">⬇️</span> bellow to add new Task <span role="img" aria-label="check">✅</span>
             </div>
         )
     );
